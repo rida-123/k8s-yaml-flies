@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-with-nodeselector
+spec:
+  nodeSelector:
+    disk-type: ssh
+  containers:
+  - image: aamirpinger/helloworld
+    name: container
+    ports:
+    - containerPort: 80

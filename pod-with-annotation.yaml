@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+  name: pod-with-annotation
+  labels:
+    type: frontend
+    env: prod
+  annotations:
+    createdBy: ridashoaib
+    email: ridashoaib666@gmail.com
+spec:
+  containers:
+  - image: aamirpinger/helloworld
+    name: container1
+    ports:
+    - containerPort: 80
