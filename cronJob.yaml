@@ -1,0 +1,18 @@
+kind: CronJob
+apiVersion: batch/v1beta1
+metadata:
+  name: cron-job
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: rsexample
+        spec:
+          containers:
+          - image: docker/whalesay
+            name: container1
+            command: ["cowsay","this is cron job"]
+          restartPolicy: Never

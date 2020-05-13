@@ -1,0 +1,14 @@
+kind: Job
+apiVersion: batch/v1
+metadata: 
+  name: job-pod
+spec:
+  template:
+    spec:
+      containers:
+      - name: container
+        image: docker/whalesay
+        command: ["cowsay","This is a job resource"]
+      restartPolicy: Never
+  backoffLimit: 4
+  activeDeadlineSeconds: 60
